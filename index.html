@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fakebook</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav-left">
+        <div class="logo">
+          <svg
+            width="40"
+            fill="#1877F2"
+            viewBox="0 0 24.00 24.00"
+            xmlns="http://www.w3.org/2000/svg"
+            stroke="#1877F2"
+            stroke-width="0.00024000000000000003"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M12 2.03998C6.5 2.03998 2 6.52998 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.84998C10.44 7.33998 11.93 5.95998 14.22 5.95998C15.31 5.95998 16.45 6.14998 16.45 6.14998V8.61998H15.19C13.95 8.61998 13.56 9.38998 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C15.9164 21.5878 18.0622 20.3855 19.6099 18.57C21.1576 16.7546 22.0054 14.4456 22 12.06C22 6.52998 17.5 2.03998 12 2.03998Z"
+              ></path>
+            </g>
+          </svg>
+        </div>
+
+        <div class="search">
+          <span class="search-icon">
+            <svg
+              width="20px"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z"
+                  stroke="#65676b"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </g>
+            </svg>
+          </span>
+          <input type="text" placeholder="Search..." />
+        </div>
+      </nav>
+
+      <nav class="nav-center">
+        <div class="box-icon">
+          <svg
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="currentColor"
+            class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq"
+            style="color: #1877f2"
+          >
+            <path
+              d="M9.464 1.286C10.294.803 11.092.5 12 .5c.908 0 1.707.303 2.537.786.795.462 1.7 1.142 2.815 1.977l2.232 1.675c1.391 1.042 2.359 1.766 2.888 2.826.53 1.059.53 2.268.528 4.006v4.3c0 1.355 0 2.471-.119 3.355-.124.928-.396 1.747-1.052 2.403-.657.657-1.476.928-2.404 1.053-.884.119-2 .119-3.354.119H7.93c-1.354 0-2.471 0-3.355-.119-.928-.125-1.747-.396-2.403-1.053-.656-.656-.928-1.475-1.053-2.403C1 18.541 1 17.425 1 16.07v-4.3c0-1.738-.002-2.947.528-4.006.53-1.06 1.497-1.784 2.888-2.826L6.65 3.263c1.114-.835 2.02-1.515 2.815-1.977zM10.5 13A1.5 1.5 0 0 0 9 14.5V21h6v-6.5a1.5 1.5 0 0 0-1.5-1.5h-3z"
+            ></path>
+          </svg>
+        </div>
+        <div class="box-icon">
+          <svg
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="currentColor"
+            class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq"
+            style="--color: var(--secondary-icon)"
+          >
+            <path
+              d="M10.996 8.132A1 1 0 0 0 9.5 9v4a1 1 0 0 0 1.496.868l3.5-2a1 1 0 0 0 0-1.736l-3.5-2z"
+            ></path>
+            <path
+              d="M14.573 2H9.427c-1.824 0-3.293 0-4.45.155-1.2.162-2.21.507-3.013 1.31C1.162 4.266.817 5.277.655 6.477.5 7.634.5 9.103.5 10.927v.146c0 1.824 0 3.293.155 4.45.162 1.2.507 2.21 1.31 3.012.802.803 1.813 1.148 3.013 1.31C6.134 20 7.603 20 9.427 20h5.146c1.824 0 3.293 0 4.45-.155 1.2-.162 2.21-.507 3.012-1.31.803-.802 1.148-1.813 1.31-3.013.155-1.156.155-2.625.155-4.449v-.146c0-1.824 0-3.293-.155-4.45-.162-1.2-.507-2.21-1.31-3.013-.802-.802-1.813-1.147-3.013-1.309C17.866 2 16.397 2 14.573 2zM3.38 4.879c.369-.37.887-.61 1.865-.741C6.251 4.002 7.586 4 9.5 4h5c1.914 0 3.249.002 4.256.138.978.131 1.496.372 1.865.74.37.37.61.888.742 1.866.135 1.007.137 2.342.137 4.256 0 1.914-.002 3.249-.137 4.256-.132.978-.373 1.496-.742 1.865-.369.37-.887.61-1.865.742-1.007.135-2.342.137-4.256.137h-5c-1.914 0-3.249-.002-4.256-.137-.978-.132-1.496-.373-1.865-.742-.37-.369-.61-.887-.741-1.865C2.502 14.249 2.5 12.914 2.5 11c0-1.914.002-3.249.138-4.256.131-.978.372-1.496.74-1.865zM8 21.5a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2H8z"
+            ></path>
+          </svg>
+        </div>
+        <div class="box-icon">
+          <svg
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="currentColor"
+            class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq"
+            style="--color: var(--secondary-icon)"
+          >
+            <path
+              d="M1.588 3.227A3.125 3.125 0 0 1 4.58 1h14.84c1.38 0 2.597.905 2.993 2.227l.816 2.719a6.47 6.47 0 0 1 .272 1.854A5.183 5.183 0 0 1 22 11.455v4.615c0 1.355 0 2.471-.119 3.355-.125.928-.396 1.747-1.053 2.403-.656.657-1.475.928-2.403 1.053-.884.12-2 .119-3.354.119H8.929c-1.354 0-2.47 0-3.354-.119-.928-.125-1.747-.396-2.403-1.053-.657-.656-.929-1.475-1.053-2.403-.12-.884-.119-2-.119-3.354V11.5l.001-.045A5.184 5.184 0 0 1 .5 7.8c0-.628.092-1.252.272-1.854l.816-2.719zM10 21h4v-3.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5V21zm6-.002c.918-.005 1.608-.025 2.159-.099.706-.095 1.033-.262 1.255-.485.223-.222.39-.55.485-1.255.099-.735.101-1.716.101-3.159v-3.284a5.195 5.195 0 0 1-1.7.284 5.18 5.18 0 0 1-3.15-1.062A5.18 5.18 0 0 1 12 13a5.18 5.18 0 0 1-3.15-1.062A5.18 5.18 0 0 1 5.7 13a5.2 5.2 0 0 1-1.7-.284V16c0 1.442.002 2.424.1 3.159.096.706.263 1.033.486 1.255.222.223.55.39 1.255.485.551.074 1.24.094 2.159.1V17.5a2.5 2.5 0 0 1 2.5-2.5h3a2.5 2.5 0 0 1 2.5 2.5v3.498zM4.581 3c-.497 0-.935.326-1.078.802l-.815 2.72A4.45 4.45 0 0 0 2.5 7.8a3.2 3.2 0 0 0 5.6 2.117 1 1 0 0 1 1.5 0A3.19 3.19 0 0 0 12 11a3.19 3.19 0 0 0 2.4-1.083 1 1 0 0 1 1.5 0A3.2 3.2 0 0 0 21.5 7.8c0-.434-.063-.865-.188-1.28l-.816-2.72A1.125 1.125 0 0 0 19.42 3H4.58z"
+            ></path>
+          </svg>
+        </div>
+        <div class="box-icon">
+          <svg
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="currentColor"
+            class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq"
+            style="--color: var(--secondary-icon)"
+          >
+            <path
+              d="M12 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm-2 4a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"
+            ></path>
+            <path
+              d="M.5 12C.5 5.649 5.649.5 12 .5S23.5 5.649 23.5 12 18.351 23.5 12 23.5.5 18.351.5 12zm2.21-2a9.537 9.537 0 0 0 0 3.993l.3.007A2 2 0 0 0 3 10h-.29zm.663-1.983a4 4 0 0 1 0 7.966 9.523 9.523 0 0 0 1.948 2.773A5.002 5.002 0 0 1 10 15.523h4a5.002 5.002 0 0 1 4.679 3.233 9.523 9.523 0 0 0 1.948-2.773 4 4 0 0 1 0-7.966A9.501 9.501 0 0 0 12 2.5a9.501 9.501 0 0 0-8.627 5.517zM21.5 12a9.55 9.55 0 0 0-.212-2.007l-.265.007H21a2 2 0 0 0-.01 4l.3-.007c.138-.643.21-1.31.21-1.993zM12 21.5a9.455 9.455 0 0 0 4.97-1.402A3 3 0 0 0 14 17.523h-4a3 3 0 0 0-2.97 2.575A9.456 9.456 0 0 0 12 21.5z"
+            ></path>
+          </svg>
+        </div>
+        <div class="box-icon">
+          <svg
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="currentColor"
+            class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq"
+            style="--color: var(--secondary-icon)"
+          >
+            <path
+              d="M8 8a1 1 0 0 1 1 1v2h2a1 1 0 1 1 0 2H9v2a1 1 0 1 1-2 0v-2H5a1 1 0 1 1 0-2h2V9a1 1 0 0 1 1-1zm8 2a1.5 1.5 0 1 0 3 0 1.5 1.5 0 0 0-3 0zm-2 4a1.5 1.5 0 1 0 3 0 1.5 1.5 0 0 0-3 0z"
+            ></path>
+            <path
+              d="M.5 11a7 7 0 0 1 7-7h9a7 7 0 0 1 7 7v2a7 7 0 0 1-7 7h-9a7 7 0 0 1-7-7v-2zm7-5a5 5 0 0 0-5 5v2a5 5 0 0 0 5 5h9a5 5 0 0 0 5-5v-2a5 5 0 0 0-5-5h-9z"
+            ></path>
+          </svg>
+        </div>
+      </nav>
+      <nav class="nav-right">
+        <div class="round-icon"><i class="fa-solid fa-grip"></i></div>
+        <div class="round-icon"><i class="fa-solid fa-comment-dots"></i></div>
+        <div class="round-icon"><i class="fa-solid fa-bell"></i></div>
+        <div class="round-icon"><img src="./assets/avata1.webp" alt="" /></div>
+      </nav>
+    </header>
+
+    <div class="main-wrapper">
+      <!-- sidebar left -->
+      <div class="sidebar-left">
+        <div class="sidebar-left-box">
+          <div class="menu-left-box">
+            <div class="menu-left-profile">
+              <img src="./assets/avata1.webp" alt="profile pic" />
+            </div>
+            <p>Tom Parker</p>
+          </div>
+
+          <div class="menu-left-box">
+            <div class="menu-left-icon">
+              <i
+                data-visualcompletion="css-img"
+                class=""
+                style="
+                  background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/A5UbHHnDt8X.png?_nc_eui2=AeGkSJnwtThp5G1ZYoqzfpRFSHvZZLqYliNIe9lkupiWI5FfkeFXFDx_4WdxqKf94Ls');
+                  background-position: 0 -296px;
+                  background-size: 37px 555px;
+                  width: 36px;
+                  height: 36px;
+                  background-repeat: no-repeat;
+                  display: inline-block;
+                "
+              ></i>
+            </div>
+            <p>Friends</p>
+          </div>
+
+          <div class="menu-left-box">
+            <div class="menu-left-icon">
+              <i
+                data-visualcompletion="css-img"
+                class=""
+                style="
+                  background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/A5UbHHnDt8X.png?_nc_eui2=AeGkSJnwtThp5G1ZYoqzfpRFSHvZZLqYliNIe9lkupiWI5FfkeFXFDx_4WdxqKf94Ls');
+                  background-position: 0 -185px;
+                  background-size: 37px 555px;
+                  width: 36px;
+                  height: 36px;
+                  background-repeat: no-repeat;
+                  display: inline-block;
+                "
+              ></i>
+            </div>
+            <p>Saved</p>
+          </div>
+
+          <div class="menu-left-box">
+            <div class="menu-left-icon">
+              <i
+                data-visualcompletion="css-img"
+                class=""
+                style="
+                  background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/A5UbHHnDt8X.png?_nc_eui2=AeGkSJnwtThp5G1ZYoqzfpRFSHvZZLqYliNIe9lkupiWI5FfkeFXFDx_4WdxqKf94Ls');
+                  background-position: 0 -444px;
+                  background-size: 37px 555px;
+                  width: 36px;
+                  height: 36px;
+                  background-repeat: no-repeat;
+                  display: inline-block;
+                "
+              ></i>
+            </div>
+            <p>Memories</p>
+          </div>
+          <div class="menu-left-box">
+            <div class="menu-left-icon">
+              <i
+                data-visualcompletion="css-img"
+                class=""
+                style="
+                  background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/A5UbHHnDt8X.png?_nc_eui2=AeGkSJnwtThp5G1ZYoqzfpRFSHvZZLqYliNIe9lkupiWI5FfkeFXFDx_4WdxqKf94Ls');
+                  background-position: 0 -37px;
+                  background-size: 37px 555px;
+                  width: 36px;
+                  height: 36px;
+                  background-repeat: no-repeat;
+                  display: inline-block;
+                "
+              ></i>
+            </div>
+            <p>Groups</p>
+          </div>
+          <div class="menu-left-box">
+            <div class="menu-left-icon">
+              <i
+                data-visualcompletion="css-img"
+                class=""
+                style="
+                  background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/A5UbHHnDt8X.png?_nc_eui2=AeGkSJnwtThp5G1ZYoqzfpRFSHvZZLqYliNIe9lkupiWI5FfkeFXFDx_4WdxqKf94Ls');
+                  background-position: 0 -518px;
+                  background-size: 37px 555px;
+                  width: 36px;
+                  height: 36px;
+                  background-repeat: no-repeat;
+                  display: inline-block;
+                "
+              ></i>
+            </div>
+            <p>Video</p>
+          </div>
+
+          <div class="menu-left-box">
+            <div class="menu-left-icon">
+              <i
+                data-visualcompletion="css-img"
+                class=""
+                style="
+                  background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/A5UbHHnDt8X.png?_nc_eui2=AeGkSJnwtThp5G1ZYoqzfpRFSHvZZLqYliNIe9lkupiWI5FfkeFXFDx_4WdxqKf94Ls');
+                  background-position: 0 -407px;
+                  background-size: 37px 555px;
+                  width: 36px;
+                  height: 36px;
+                  background-repeat: no-repeat;
+                  display: inline-block;
+                "
+              ></i>
+            </div>
+            <p>Maketplace</p>
+          </div>
+          <div class="menu-left-box">
+            <div class="menu-left-icon">
+              <img
+                draggable="false"
+                height="36"
+                width="36"
+                alt=""
+                class="xz74otr"
+                referrerpolicy="origin-when-cross-origin"
+                src="https://static.xx.fbcdn.net/rsrc.php/v3/yF/r/kD5Sv0isIPs.png?_nc_eui2=AeHVLXfUuEZvXJjVwgFIn-F6YEZpcuxvq3JgRmly7G-rcm0ImQg_rLTiiz-O46ZfLAY"
+              />
+            </div>
+            <p>Feeds</p>
+          </div>
+          <div class="menu-left-box">
+            <div class="menu-left-icon">
+              <i
+                data-visualcompletion="css-img"
+                class=""
+                style="
+                  background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yo/r/ajyrcpZtP4T.png?_nc_eui2=AeFHjWjY4jAYGBVXjCG01bRPQYO9bZteF4dBg71tm14Xh_72NlnCGNNyfs_2Xs-QhJ0');
+                  background-position: 0 -37px;
+                  background-size: 37px 74px;
+                  width: 36px;
+                  height: 36px;
+                  background-repeat: no-repeat;
+                  display: inline-block;
+                "
+              ></i>
+            </div>
+            <p>Events</p>
+          </div>
+
+          <div class="menu-left-box">
+            <div class="menu-left-icon">
+              <img
+                draggable="false"
+                height="36"
+                width="36"
+                alt=""
+                class="xz74otr"
+                referrerpolicy="origin-when-cross-origin"
+                src="https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/y5w6W9F6KEL.png?_nc_eui2=AeEvPEXQOelOPn4IWEMW8PrlcyM_jJmgGZlzIz-MmaAZmed--o9HPYZaqsfOhIcu5oY"
+              />
+            </div>
+            <p>Ads Manager</p>
+          </div>
+
+          <div class="menu-left-box">
+            <div class="menu-left-icon arrow-icon">
+              <svg
+                viewBox="0 0 16 16"
+                width="20"
+                height="20"
+                fill="currentColor"
+                aria-hidden="true"
+                class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq"
+                style="--color: var(--primary-icon)"
+              >
+                <g fill-rule="evenodd" transform="translate(-448 -544)">
+                  <path
+                    fill-rule="nonzero"
+                    d="M452.707 549.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L456 552.586l-3.293-3.293z"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+            <p>See more</p>
+          </div>
+        </div>
+
+        <div class="sidebar-left-shortcut-box">
+          <div class="shortcut-title">
+            <div>Your Shortcuts</div>
+            <div class="edite-button"></div>
+          </div>
+
+          <div class="shortcut-box">
+            <div class="shortcut-img">
+              <img src="./assets/9arm.jpeg" alt="9arm" />
+            </div>
+            <div>9arm</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- new feed -->
+      <div class="center-feed">
+        <div class="news-feed">
+          <div class="create-box">
+            <div class="create-icon">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <div class="create-text">
+              <p>Create story</p>
+              <p>Write somthing...</p>
+            </div>
+          </div>
+
+          <div class="miscellaneouse-box">
+            <div class="status-box">
+              <div class="status">
+                <img src="./assets/avata1.webp" alt="profile image" />
+              </div>
+              <div>What's on your mind, Tom?</div>
+            </div>
+
+            <div class="status-menu-box">
+              <div class="menu-bar-box">
+                <div class="menu-bar-box-icon">
+                  <img
+                    height="24"
+                    width="24"
+                    alt=""
+                    class="xz74otr"
+                    referrerpolicy="origin-when-cross-origin"
+                    src="https://static.xx.fbcdn.net/rsrc.php/v3/yF/r/v1iF2605Cb5.png?_nc_eui2=AeFYd889tOvgG-c0kpnmAJPw3Eh3Wgl8GJPcSHdaCXwYk-UEOROXySPICXqbpBT3az1ZVEEZtFXBmk3mxnQWbbMw"
+                  />
+                </div>
+                <p>Live video</p>
+              </div>
+
+              <div class="menu-bar-box">
+                <div class="menu-bar-box-icon">
+                  <img
+                    height="24"
+                    width="24"
+                    alt=""
+                    class="xz74otr"
+                    referrerpolicy="origin-when-cross-origin"
+                    src="https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/a6OjkIIE-R0.png?_nc_eui2=AeE-j0jjVI3qaMfvl_Wx9mQdfK5Z1qDG7FV8rlnWoMbsVeoT3ZgEKXTsIMcNSiFuW6TQHiDGN7Kf6AScyUtTYFcm"
+                  />
+                </div>
+                <p>Photo/video</p>
+              </div>
+
+              <div class="menu-bar-box">
+                <div class="menu-bar-box-icon">
+                  <img
+                    height="24"
+                    width="24"
+                    alt=""
+                    class="xz74otr"
+                    referrerpolicy="origin-when-cross-origin"
+                    src="https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/yMDS19UDsWe.png?_nc_eui2=AeHUwBYJ6iKmmVbtf_02F3FHv2_PAiqLvPK_b88CKou88gVjsswdaC9_WREMOxdInpyBDA10iYKzxtCNbPSzZXlV"
+                  />
+                </div>
+                <p>Feeling/activity</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contents-box">
+            <div class="contents-box-top">
+              <div class="content-header-box">
+                <div class="content-title-box">
+                  <div class="content-img">
+                    <img src="./assets/avata2.webp" alt="photo" />
+                  </div>
+                  <div class="content-tiltle-name-box">
+                    <div class="title-name">
+                      <p>Fav quote &#x2022; <span>following</span></p>
+                    </div>
+                    <div class="days">
+                      <p>5 days &#x2022;</p>
+                      <div class="eart-icon">
+                        <i class="fa-solid fa-earth-africa"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="content-icon-box">
+                  <div><i class="fa-solid fa-ellipsis"></i></div>
+                  <div><i class="fa-solid fa-xmark"></i></div>
+                </div>
+              </div>
+
+              <div class="content-details">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Architecto, impedit. Corporis accusamus quas atque enim.
+                Officiis tempore voluptatibus recusandae fugit libero, explicabo
+                nulla possimus in ex rerum repellendus beatae nobis. Ipsa
+                ducimus rem minima omnis laboriosam exercitationem inventore
+                culpa ea reprehenderit. Tempora, ipsum dolorum rem asperiores
+                blanditiis ea unde vel dolores veniam temporibus odio
+                voluptatibus, quos eos id optio atque.<span>see more...</span>
+              </div>
+            </div>
+
+            <div class="contents-box-center">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pavia_San_Pietro_in_Ciel_d%27Oro_Dante.JPG"
+                alt=""
+              />
+            </div>
+
+            <div class="contents-box-bottom">
+              <div class="content-bottom-box">
+                <div class="content-bottom-1">
+                  <div class="content-bottom-1-left">
+                    <img
+                      class="x16dsc37"
+                      height="18"
+                      role="presentation"
+                      src="data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(%23paint0_linear_15251_63610)'/%3E%3Cpath d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(%23paint1_radial_15251_63610)'/%3E%3Cpath d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(%23paint2_radial_15251_63610)' fill-opacity='.5'/%3E%3Cpath d='M7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1-2.2374 1.764H6.9185a.5752.5752 0 0 1-.5752-.5752V7.7384c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509l-.0002-.4496ZM4.367 7a.767.767 0 0 0-.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835V7.3835A.3835.3835 0 0 0 5.134 7h-.767Z' fill='%23fff'/%3E%3Cdefs%3E%3CradialGradient id='paint1_radial_15251_63610' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='rotate(90 .0005 8) scale(7.99958)'%3E%3Cstop offset='.5618' stop-color='%230866FF' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%230866FF' stop-opacity='.1'/%3E%3C/radialGradient%3E%3CradialGradient id='paint2_radial_15251_63610' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='rotate(45 -4.5257 10.9237) scale(10.1818)'%3E%3Cstop offset='.3143' stop-color='%2302ADFC'/%3E%3Cstop offset='1' stop-color='%2302ADFC' stop-opacity='0'/%3E%3C/radialGradient%3E%3ClinearGradient id='paint0_linear_15251_63610' x1='2.3989' y1='2.3999' x2='13.5983' y2='13.5993' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2302ADFC'/%3E%3Cstop offset='.5' stop-color='%230866FF'/%3E%3Cstop offset='1' stop-color='%232B7EFF'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E"
+                      width="18"
+                    />
+                    <p>20K</p>
+                  </div>
+                  <div class="content-bottom-1-right">
+                    <p>3.5K comments</p>
+                    <p>36K shares</p>
+                  </div>
+                </div>
+                <div class="content-bottom-2">
+                  <div class="content-bottom-2-menu-box">
+                    <div class="bottom-2-icon">
+                      <i
+                        data-visualcompletion="css-img"
+                        class="x1b0d499 x1d69dk1"
+                        style="
+                          background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yp/r/33uRJSkrOlX.png?_nc_eui2=AeEG2IjqnUklNN8eyWUDJCyVf7HRcXkFf3F_sdFxeQV_cW1l7ehLjKT6uh6YVrKlf9-uAicYc5Kxua6HEeu6Cl6A');
+                          background-position: 0px -796px;
+                          background-size: 26px 1522px;
+                          width: 20px;
+                          height: 20px;
+                          background-repeat: no-repeat;
+                          display: inline-block;
+                        "
+                      ></i>
+                    </div>
+                    <p>Like</p>
+                  </div>
+
+                  <div class="content-bottom-2-menu-box">
+                    <div class="bottom-2-icon">
+                      <i
+                        data-visualcompletion="css-img"
+                        class="x1b0d499 x1d69dk1"
+                        style="
+                          background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yp/r/33uRJSkrOlX.png?_nc_eui2=AeEG2IjqnUklNN8eyWUDJCyVf7HRcXkFf3F_sdFxeQV_cW1l7ehLjKT6uh6YVrKlf9-uAicYc5Kxua6HEeu6Cl6A');
+                          background-position: 0px -598px;
+                          background-size: 26px 1522px;
+                          width: 20px;
+                          height: 20px;
+                          background-repeat: no-repeat;
+                          display: inline-block;
+                        "
+                      ></i>
+                    </div>
+                    <p>Comment</p>
+                  </div>
+
+                  <div class="content-bottom-2-menu-box">
+                    <div class="bottom-2-icon">
+                      <i
+                        data-visualcompletion="css-img"
+                        class="x1b0d499 x1d69dk1"
+                        style="
+                          background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yp/r/33uRJSkrOlX.png?_nc_eui2=AeEG2IjqnUklNN8eyWUDJCyVf7HRcXkFf3F_sdFxeQV_cW1l7ehLjKT6uh6YVrKlf9-uAicYc5Kxua6HEeu6Cl6A');
+                          background-position: 0px -950px;
+                          background-size: 26px 1522px;
+                          width: 20px;
+                          height: 20px;
+                          background-repeat: no-repeat;
+                          display: inline-block;
+                        "
+                      ></i>
+                    </div>
+                    <p>Shares</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contents-box">
+            <div class="contents-box-top">
+              <div class="content-header-box">
+                <div class="content-title-box">
+                  <div class="content-img">
+                    <img src="./assets/avata2.webp" alt="photo" />
+                  </div>
+                  <div class="content-tiltle-name-box">
+                    <div class="title-name">
+                      <p>Fav quote &#x2022; <span>following</span></p>
+                    </div>
+                    <div class="days">
+                      <p>5 days &#x2022;</p>
+                      <div class="eart-icon">
+                        <i class="fa-solid fa-earth-africa"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="content-icon-box">
+                  <div><i class="fa-solid fa-ellipsis"></i></div>
+                  <div><i class="fa-solid fa-xmark"></i></div>
+                </div>
+              </div>
+
+              <div class="content-details">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Architecto, impedit. Corporis accusamus quas atque enim.
+                Officiis tempore voluptatibus recusandae fugit libero, explicabo
+                nulla possimus in ex rerum repellendus beatae nobis. Ipsa
+                ducimus rem minima omnis laboriosam exercitationem inventore
+                culpa ea reprehenderit. Tempora, ipsum dolorum rem asperiores
+                blanditiis ea unde vel dolores veniam temporibus odio
+                voluptatibus, quos eos id optio atque.<span>see more...</span>
+              </div>
+            </div>
+
+            <div class="contents-box-center">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pavia_San_Pietro_in_Ciel_d%27Oro_Dante.JPG"
+                alt=""
+              />
+            </div>
+
+            <div class="contents-box-bottom">
+              <div class="content-bottom-box">
+                <div class="content-bottom-1">
+                  <div class="content-bottom-1-left">
+                    <img
+                      class="x16dsc37"
+                      height="18"
+                      role="presentation"
+                      src="data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(%23paint0_linear_15251_63610)'/%3E%3Cpath d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(%23paint1_radial_15251_63610)'/%3E%3Cpath d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(%23paint2_radial_15251_63610)' fill-opacity='.5'/%3E%3Cpath d='M7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1-2.2374 1.764H6.9185a.5752.5752 0 0 1-.5752-.5752V7.7384c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509l-.0002-.4496ZM4.367 7a.767.767 0 0 0-.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835V7.3835A.3835.3835 0 0 0 5.134 7h-.767Z' fill='%23fff'/%3E%3Cdefs%3E%3CradialGradient id='paint1_radial_15251_63610' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='rotate(90 .0005 8) scale(7.99958)'%3E%3Cstop offset='.5618' stop-color='%230866FF' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%230866FF' stop-opacity='.1'/%3E%3C/radialGradient%3E%3CradialGradient id='paint2_radial_15251_63610' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='rotate(45 -4.5257 10.9237) scale(10.1818)'%3E%3Cstop offset='.3143' stop-color='%2302ADFC'/%3E%3Cstop offset='1' stop-color='%2302ADFC' stop-opacity='0'/%3E%3C/radialGradient%3E%3ClinearGradient id='paint0_linear_15251_63610' x1='2.3989' y1='2.3999' x2='13.5983' y2='13.5993' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2302ADFC'/%3E%3Cstop offset='.5' stop-color='%230866FF'/%3E%3Cstop offset='1' stop-color='%232B7EFF'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E"
+                      width="18"
+                    />
+                    <p>20K</p>
+                  </div>
+                  <div class="content-bottom-1-right">
+                    <p>3.5K comments</p>
+                    <p>36K shares</p>
+                  </div>
+                </div>
+                <div class="content-bottom-2">
+                  <div class="content-bottom-2-menu-box">
+                    <div class="bottom-2-icon">
+                      <i
+                        data-visualcompletion="css-img"
+                        class="x1b0d499 x1d69dk1"
+                        style="
+                          background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yp/r/33uRJSkrOlX.png?_nc_eui2=AeEG2IjqnUklNN8eyWUDJCyVf7HRcXkFf3F_sdFxeQV_cW1l7ehLjKT6uh6YVrKlf9-uAicYc5Kxua6HEeu6Cl6A');
+                          background-position: 0px -796px;
+                          background-size: 26px 1522px;
+                          width: 20px;
+                          height: 20px;
+                          background-repeat: no-repeat;
+                          display: inline-block;
+                        "
+                      ></i>
+                    </div>
+                    <p>Like</p>
+                  </div>
+
+                  <div class="content-bottom-2-menu-box">
+                    <div class="bottom-2-icon">
+                      <i
+                        data-visualcompletion="css-img"
+                        class="x1b0d499 x1d69dk1"
+                        style="
+                          background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yp/r/33uRJSkrOlX.png?_nc_eui2=AeEG2IjqnUklNN8eyWUDJCyVf7HRcXkFf3F_sdFxeQV_cW1l7ehLjKT6uh6YVrKlf9-uAicYc5Kxua6HEeu6Cl6A');
+                          background-position: 0px -598px;
+                          background-size: 26px 1522px;
+                          width: 20px;
+                          height: 20px;
+                          background-repeat: no-repeat;
+                          display: inline-block;
+                        "
+                      ></i>
+                    </div>
+                    <p>Comment</p>
+                  </div>
+
+                  <div class="content-bottom-2-menu-box">
+                    <div class="bottom-2-icon">
+                      <i
+                        data-visualcompletion="css-img"
+                        class="x1b0d499 x1d69dk1"
+                        style="
+                          background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yp/r/33uRJSkrOlX.png?_nc_eui2=AeEG2IjqnUklNN8eyWUDJCyVf7HRcXkFf3F_sdFxeQV_cW1l7ehLjKT6uh6YVrKlf9-uAicYc5Kxua6HEeu6Cl6A');
+                          background-position: 0px -950px;
+                          background-size: 26px 1522px;
+                          width: 20px;
+                          height: 20px;
+                          background-repeat: no-repeat;
+                          display: inline-block;
+                        "
+                      ></i>
+                    </div>
+                    <p>Shares</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contents-box">
+            <div class="contents-box-top">
+              <div class="content-header-box">
+                <div class="content-title-box">
+                  <div class="content-img">
+                    <img src="./assets/avata2.webp" alt="photo" />
+                  </div>
+                  <div class="content-tiltle-name-box">
+                    <div class="title-name">
+                      <p>Fav quote &#x2022; <span>following</span></p>
+                    </div>
+                    <div class="days">
+                      <p>5 days &#x2022;</p>
+                      <div class="eart-icon">
+                        <i class="fa-solid fa-earth-africa"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="content-icon-box">
+                  <div><i class="fa-solid fa-ellipsis"></i></div>
+                  <div><i class="fa-solid fa-xmark"></i></div>
+                </div>
+              </div>
+
+              <div class="content-details">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Architecto, impedit. Corporis accusamus quas atque enim.
+                Officiis tempore voluptatibus recusandae fugit libero, explicabo
+                nulla possimus in ex rerum repellendus beatae nobis. Ipsa
+                ducimus rem minima omnis laboriosam exercitationem inventore
+                culpa ea reprehenderit. Tempora, ipsum dolorum rem asperiores
+                blanditiis ea unde vel dolores veniam temporibus odio
+                voluptatibus, quos eos id optio atque.<span>see more...</span>
+              </div>
+            </div>
+
+            <div class="contents-box-center">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pavia_San_Pietro_in_Ciel_d%27Oro_Dante.JPG"
+                alt=""
+              />
+            </div>
+
+            <div class="contents-box-bottom">
+              <div class="content-bottom-box">
+                <div class="content-bottom-1">
+                  <div class="content-bottom-1-left">
+                    <img
+                      class="x16dsc37"
+                      height="18"
+                      role="presentation"
+                      src="data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(%23paint0_linear_15251_63610)'/%3E%3Cpath d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(%23paint1_radial_15251_63610)'/%3E%3Cpath d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(%23paint2_radial_15251_63610)' fill-opacity='.5'/%3E%3Cpath d='M7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1-2.2374 1.764H6.9185a.5752.5752 0 0 1-.5752-.5752V7.7384c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509l-.0002-.4496ZM4.367 7a.767.767 0 0 0-.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835V7.3835A.3835.3835 0 0 0 5.134 7h-.767Z' fill='%23fff'/%3E%3Cdefs%3E%3CradialGradient id='paint1_radial_15251_63610' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='rotate(90 .0005 8) scale(7.99958)'%3E%3Cstop offset='.5618' stop-color='%230866FF' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%230866FF' stop-opacity='.1'/%3E%3C/radialGradient%3E%3CradialGradient id='paint2_radial_15251_63610' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='rotate(45 -4.5257 10.9237) scale(10.1818)'%3E%3Cstop offset='.3143' stop-color='%2302ADFC'/%3E%3Cstop offset='1' stop-color='%2302ADFC' stop-opacity='0'/%3E%3C/radialGradient%3E%3ClinearGradient id='paint0_linear_15251_63610' x1='2.3989' y1='2.3999' x2='13.5983' y2='13.5993' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2302ADFC'/%3E%3Cstop offset='.5' stop-color='%230866FF'/%3E%3Cstop offset='1' stop-color='%232B7EFF'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E"
+                      width="18"
+                    />
+                    <p>20K</p>
+                  </div>
+                  <div class="content-bottom-1-right">
+                    <p>3.5K comments</p>
+                    <p>36K shares</p>
+                  </div>
+                </div>
+                <div class="content-bottom-2">
+                  <div class="content-bottom-2-menu-box">
+                    <div class="bottom-2-icon">
+                      <i
+                        data-visualcompletion="css-img"
+                        class="x1b0d499 x1d69dk1"
+                        style="
+                          background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yp/r/33uRJSkrOlX.png?_nc_eui2=AeEG2IjqnUklNN8eyWUDJCyVf7HRcXkFf3F_sdFxeQV_cW1l7ehLjKT6uh6YVrKlf9-uAicYc5Kxua6HEeu6Cl6A');
+                          background-position: 0px -796px;
+                          background-size: 26px 1522px;
+                          width: 20px;
+                          height: 20px;
+                          background-repeat: no-repeat;
+                          display: inline-block;
+                        "
+                      ></i>
+                    </div>
+                    <p>Like</p>
+                  </div>
+
+                  <div class="content-bottom-2-menu-box">
+                    <div class="bottom-2-icon">
+                      <i
+                        data-visualcompletion="css-img"
+                        class="x1b0d499 x1d69dk1"
+                        style="
+                          background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yp/r/33uRJSkrOlX.png?_nc_eui2=AeEG2IjqnUklNN8eyWUDJCyVf7HRcXkFf3F_sdFxeQV_cW1l7ehLjKT6uh6YVrKlf9-uAicYc5Kxua6HEeu6Cl6A');
+                          background-position: 0px -598px;
+                          background-size: 26px 1522px;
+                          width: 20px;
+                          height: 20px;
+                          background-repeat: no-repeat;
+                          display: inline-block;
+                        "
+                      ></i>
+                    </div>
+                    <p>Comment</p>
+                  </div>
+
+                  <div class="content-bottom-2-menu-box">
+                    <div class="bottom-2-icon">
+                      <i
+                        data-visualcompletion="css-img"
+                        class="x1b0d499 x1d69dk1"
+                        style="
+                          background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yp/r/33uRJSkrOlX.png?_nc_eui2=AeEG2IjqnUklNN8eyWUDJCyVf7HRcXkFf3F_sdFxeQV_cW1l7ehLjKT6uh6YVrKlf9-uAicYc5Kxua6HEeu6Cl6A');
+                          background-position: 0px -950px;
+                          background-size: 26px 1522px;
+                          width: 20px;
+                          height: 20px;
+                          background-repeat: no-repeat;
+                          display: inline-block;
+                        "
+                      ></i>
+                    </div>
+                    <p>Shares</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- sidebar right -->
+      <div class="sidebar-right">
+        <div class="sponser-box">
+          <p class="sponser-title">Sponsered</p>
+          <div class="sponser-chem-box">
+            <div class="chem-img">
+              <img src="./assets/chemist.png" alt="chemist img" />
+            </div>
+            <div class="chem-details">
+              <p>Chemist Warehouse</p>
+              <p>www.chemistwarehouse.au.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="page-box">
+          <div class="page-title-box">
+            <p>Your Pages and Profiles</p>
+            <div class="page-title-box-icon">
+              <i class="fa-solid fa-ellipsis"></i>
+            </div>
+          </div>
+
+          <div class="page-acc">
+            <div class="page-acc-img">
+              <img src="/assets/page.jpeg" alt="page" />
+            </div>
+
+            <p>NIITA</p>
+          </div>
+          <div class="page-menu-box">
+            <div class="page-menu">
+              <div class="page-menu-icon">
+                <i
+                  data-visualcompletion="css-img"
+                  class="x1b0d499 x1d69dk1"
+                  style="
+                    background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yJ/r/FOyabkSCiOX.png?_nc_eui2=AeHqv2rL0TikBrkfHnwzkqwyQmApTpbQ1BpCYClOltDUGuGFBNkVpN2GCx-scn0pSaeyaqfQTVHI3rr314_ZxUzz');
+                    background-position: 0 0;
+                    background-size: 22px 282px;
+                    width: 20px;
+                    height: 20px;
+                    background-repeat: no-repeat;
+                    display: inline-block;
+                  "
+                ></i>
+              </div>
+              <p>Switch to Page</p>
+            </div>
+
+            <div class="page-menu">
+              <div class="page-menu-icon">
+                <i
+                  data-visualcompletion="css-img"
+                  class="x1b0d499 x1d69dk1"
+                  style="
+                    background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yJ/r/FOyabkSCiOX.png?_nc_eui2=AeHqv2rL0TikBrkfHnwzkqwyQmApTpbQ1BpCYClOltDUGuGFBNkVpN2GCx-scn0pSaeyaqfQTVHI3rr314_ZxUzz');
+                    background-position: 0 -132px;
+                    background-size: 22px 282px;
+                    width: 20px;
+                    height: 20px;
+                    background-repeat: no-repeat;
+                    display: inline-block;
+                  "
+                ></i>
+              </div>
+              <p>Create promotion</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-box">
+          <div class="contact-titel-box">
+            <p>Contact</p>
+            <div class="contact-box-icon">
+              <div><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div><i class="fa-solid fa-ellipsis"></i></div>
+            </div>
+          </div>
+
+          <div class="contact-acc-box">
+            <div class="contact-acc-img">
+              <img src="./assets/9arm.jpeg" alt="9arm" />
+            </div>
+            <p>9arm</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
